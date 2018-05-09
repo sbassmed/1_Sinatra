@@ -1,5 +1,9 @@
 require 'sinatra'
 
 get '/' do
-  'Hello world!'
+  unless params[:nombre] != nil && params[:nombre].capitalize == "Juan"
+    "Hola desconocido!"
+  else
+    "<h1>Hola #{params[:nombre]}</h1>"
+  end
 end
